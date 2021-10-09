@@ -15,3 +15,16 @@ CREATE TABLE users (
 -- CREATE TABLE top_artists (
 
 -- )
+
+CREATE TABLE conversations (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_one INTEGER NOT NULL,
+  user_two INTEGER NOT NULL
+)
+
+CREATE TABLE conversation_reply (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  message TEXT,
+  author_id REFERENCES users,
+  conversation_id REFERENCES conversations
+)
