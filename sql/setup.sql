@@ -8,23 +8,22 @@ CREATE TABLE users (
   spotify_email TEXT NOT NULL,
   spotify_profile TEXT,
   spotify_image TEXT,
-  spotify_href TEXT,
-  token TEXT NOT NULL
+  spotify_href TEXT
 )
 
 -- CREATE TABLE top_artists (
 
 -- )
 
-CREATE TABLE conversations (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  user_one INTEGER NOT NULL,
-  user_two INTEGER NOT NULL
-)
+-- CREATE TABLE conversations (
+--   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   user_one INTEGER NOT NULL,
+--   user_two INTEGER NOT NULL
+-- )
 
-CREATE TABLE conversation_reply (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  message TEXT,
-  author_id REFERENCES users,
-  conversation_id REFERENCES conversations
-)
+-- CREATE TABLE conversation_reply (
+--   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   message TEXT,
+--   author_id REFERENCES users,
+--   conversation_id REFERENCES conversations
+-- )
